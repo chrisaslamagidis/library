@@ -1,34 +1,20 @@
-package com.pigeon.library.entity;
+package com.pigeon.library.dto;
 
-import javax.persistence.*;
+public class BookDTO {
 
-@Entity
-@Table(name = "book")
-public class Book {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "title")
     private String title;
-
-    @Column(name = "author")
     private String author;
-
-    @Column(name = "category")
     private String category;
-
-    @Column(name = "isbn")
     private String isbn;
-
-    @Column(name = "publisher")
     private String publisher;
 
-    public Book() {
+
+    public BookDTO() {
     }
 
-    public Book(String title, String author, String category, String isbn, String publisher) {
+    public BookDTO(Long id, String title, String author, String category, String isbn, String publisher) {
+        this.id = id;
         this.title = title;
         this.author = author;
         this.category = category;
@@ -84,6 +70,3 @@ public class Book {
         this.publisher = publisher;
     }
 }
-
-
-
